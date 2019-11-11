@@ -28,8 +28,29 @@ int main()
 	animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
 	animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
 
+	AnimatedSprite animated_Run(texture);
+	animated_Run.addFrame(sf::IntRect(3, 88, 84, 84));
+	animated_Run.addFrame(sf::IntRect(88, 88, 84, 84));
+	animated_Run.addFrame(sf::IntRect(173, 88, 84, 84));
+	animated_Run.addFrame(sf::IntRect(258, 88, 84, 84));
+	animated_Run.addFrame(sf::IntRect(343, 88, 84, 84));
+	animated_Run.addFrame(sf::IntRect(428, 88, 84, 84));
+
+
+	AnimatedSprite animated_Prone(texture);
+	animated_Prone.addFrame(sf::IntRect(3, 173, 84, 84));
+	animated_Prone.addFrame(sf::IntRect(88, 173, 84, 84));
+	animated_Prone.addFrame(sf::IntRect(173, 173, 84, 84));
+	animated_Prone.addFrame(sf::IntRect(258, 173, 84, 84));
+	animated_Prone.addFrame(sf::IntRect(343, 173, 84, 84));
+	animated_Prone.addFrame(sf::IntRect(428, 173, 84, 84));
+
+	AnimatedSprite mainSprite(texture);
+
+	mainSprite = animated_Prone;
+
 	// Setup the Player
-	Player player(animated_sprite);
+	Player player(mainSprite);
 	Input input;
 	
 	// Start the game loop
@@ -71,6 +92,11 @@ int main()
 				input.setCurrent(Input::Action::IDLE);
 				break;
 			}
+
+		}
+		if (input.LEFT)
+		{
+			mainSprite = animated_sprite;
 		}
 
 		// Handle input to Player
