@@ -45,6 +45,31 @@ int main()
 	animated_Prone.addFrame(sf::IntRect(343, 173, 84, 84));
 	animated_Prone.addFrame(sf::IntRect(428, 173, 84, 84));
 
+	AnimatedSprite animated_Crounching(texture);
+	animated_Crounching.addFrame(sf::IntRect(3, 258, 84, 84));
+	animated_Crounching.addFrame(sf::IntRect(88, 258, 84, 84));
+	animated_Crounching.addFrame(sf::IntRect(173, 258, 84, 84));
+	animated_Crounching.addFrame(sf::IntRect(258, 258, 84, 84));
+	animated_Crounching.addFrame(sf::IntRect(343, 258, 84, 84));
+	animated_Crounching.addFrame(sf::IntRect(428, 258, 84, 84));
+
+	AnimatedSprite animated_Jumping(texture);
+	animated_Jumping.addFrame(sf::IntRect(3, 343, 84, 84));
+	animated_Jumping.addFrame(sf::IntRect(88, 343, 84, 84));
+	animated_Jumping.addFrame(sf::IntRect(173, 343, 84, 84));
+	animated_Jumping.addFrame(sf::IntRect(258, 343, 84, 84));
+	animated_Jumping.addFrame(sf::IntRect(343, 343, 84, 84));
+	animated_Jumping.addFrame(sf::IntRect(428, 343, 84, 84));
+
+	AnimatedSprite animated_Climbing (texture);
+	animated_Climbing.addFrame(sf::IntRect(3, 428, 84, 84));
+	animated_Climbing.addFrame(sf::IntRect(88, 428, 84, 84));
+	animated_Climbing.addFrame(sf::IntRect(173, 428, 84, 84));
+	animated_Climbing.addFrame(sf::IntRect(258, 428, 84, 84));
+	animated_Climbing.addFrame(sf::IntRect(343, 428, 84, 84));
+	animated_Climbing.addFrame(sf::IntRect(428, 428, 84, 84));
+	x
+
 	AnimatedSprite mainSprite(texture);
 
 	mainSprite = animated_Prone;
