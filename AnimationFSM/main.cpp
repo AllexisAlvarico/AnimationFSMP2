@@ -19,6 +19,14 @@ int main()
 		return EXIT_FAILURE;
 	}
 
+	bool idle = true;
+	bool run = false;
+	bool climb = false;
+	bool prone = false;
+	bool crouching = false;
+	bool jumping = false;
+
+
 	// Setup Players Default Animated Sprite
 	AnimatedSprite animated_sprite(texture);
 	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
@@ -95,35 +103,43 @@ int main()
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
 					player.setSprite(animated_Climbing);
+					climb = true;
 					input.setCurrent(Input::Action::LEFT);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
 					player.setSprite(animated_Run);
+					run = true;
 					input.setCurrent(Input::Action::RIGHT);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 				{
 					player.setSprite(animated_Jumping);
+					jumping = true;
 					input.setCurrent(Input::Action::UP);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 				{
 					player.setSprite(animated_Prone);
+					prone = true;
 					input.setCurrent(Input::Action::Down);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
 				{
 					player.setSprite(animated_Crounching);
+					crouching = true;
 					input.setCurrent(Input::Action::LCRTL);
 				}
 				break;
 			default:
-				input.setCurrent(Input::Action::IDLE);
+		/*		player.setSprite(animated_sprite);
+				input.setCurrent(Input::Action::IDLE);*/
 				break;
 			}
 
 		}
+
+		
 
 
 		// Handle input to Player
