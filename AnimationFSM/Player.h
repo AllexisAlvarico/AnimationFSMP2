@@ -17,6 +17,7 @@ public:
 	~Player();
 	AnimatedSprite& getAnimatedSprite();
 	void handleInput(Input);
+	void setSprite(AnimatedSprite& t_animation);
 	void update();
 };
 

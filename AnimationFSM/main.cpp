@@ -68,14 +68,14 @@ int main()
 	animated_Climbing.addFrame(sf::IntRect(258, 428, 84, 84));
 	animated_Climbing.addFrame(sf::IntRect(343, 428, 84, 84));
 	animated_Climbing.addFrame(sf::IntRect(428, 428, 84, 84));
-	x
+	
 
-	AnimatedSprite mainSprite(texture);
+	//AnimatedSprite mainSprite(texture);
 
-	mainSprite = animated_Prone;
+	//mainSprite = animated_Prone;
 
 	// Setup the Player
-	Player player(mainSprite);
+	Player player(animated_sprite);
 	Input input;
 	
 	// Start the game loop
@@ -94,22 +94,27 @@ int main()
 			case sf::Event::KeyPressed:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
+					player.setSprite(animated_Climbing);
 					input.setCurrent(Input::Action::LEFT);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
+					player.setSprite(animated_Run);
 					input.setCurrent(Input::Action::RIGHT);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 				{
+					player.setSprite(animated_Jumping);
 					input.setCurrent(Input::Action::UP);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 				{
+					player.setSprite(animated_Prone);
 					input.setCurrent(Input::Action::Down);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
 				{
+					player.setSprite(animated_Crounching);
 					input.setCurrent(Input::Action::LCRTL);
 				}
 				break;
@@ -119,10 +124,7 @@ int main()
 			}
 
 		}
-		if (input.LEFT)
-		{
-			mainSprite = animated_sprite;
-		}
+
 
 		// Handle input to Player
 		player.handleInput(input);

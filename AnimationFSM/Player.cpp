@@ -57,6 +57,11 @@ void Player::handleInput(Input in)
 	}
 }
 
+void Player::setSprite(AnimatedSprite& t_animation)
+{
+	m_animated_sprite = t_animation;
+}
+
 void Player::update()
 {
 	//std::cout << "Handle Update" << std::endl;
